@@ -1,6 +1,15 @@
+# Virtual environment
 .venv/
+
+# Python cache
 __pycache__/
+*.pyc
+
+# Pytest cache
 .pytest_cache/
+
+# Screenshots
+*.png
+
+# Driver
 chromedriver.exe
-*.log
-.DS_Store

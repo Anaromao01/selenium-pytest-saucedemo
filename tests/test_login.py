@@ -1,30 +1,18 @@
 from selenium.webdriver.common.by import By # type: ignore
 from selenium.webdriver.support.ui import WebDriverWait # type: ignore
-from selenium.webdriver.support import expected_conditions as EC # type: ignore
-from pages.login_page import LoginPage # type: ignore
-from pages.inventory_page import InventoryPage # type: ignore
-
+from pages.login_page import LoginPage
+from pages.inventory_page import InventoryPage
 
 
 def test_login_success(driver):
-    wait = WebDriverWait(driver, 10)
+    login_page = LoginPage(driver)
+    inventory_page = InventoryPage(driver)
 
-    driver.get("https://www.saucedemo.com/")
+    # Step 1 - Open login page
+    login_page.open()
 
-    username = wait.until(
-        EC.visibility_of_element_located((By.ID, "user-name"))
-    )
-    password = driver.find_element(By.ID, "password")
+    # Step 2 - Perform login
+    login_page.login("standard_user", "secret_sauce")
 
-    username.send_keys("standard_user")
-    password.send_keys("secret_sauce")
-
-    driver.find_element(By.ID, "login-button").click()
-
-    title = wait.until(
-        EC.visibility_of_element_located((By.CLASS_NAME, "title"))
-    )
-
-    assert title.text == "Products"
-
-
+    # Step 3 - Validate inventory page title
+    assert inventory_page.get_title() == "Products"
