@@ -59,7 +59,7 @@ Selenium-ChromeDrive/
 
 ```
 ---
-#Autor
+## Autor
 
 Projeto desenvolvido por Ana Claudia Romão
 
