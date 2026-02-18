@@ -56,3 +56,11 @@ Selenium-ChromeDrive/
 ├── pytest.ini              # Configuração do Pytest
 ├── requirements.txt        # Dependências do projeto
 └── README.md
+
+
+#Autor
+
+Projeto desenvolvido por Ana Claudia Romão
+QA em transição para automação de testes.
+
+🔗 LinkedIn: https://www.linkedin.com/in/ana-claudia-rom%C3%A3o-9082a133/
